@@ -1,12 +1,15 @@
-# cdktf-provider-aws-go
+# ⛔️ DEPRECATED
+# use the official: https://github.com/hashicorp/cdktf-provider-aws-go
+
+## cdktf-provider-aws-go
 - Terraform [aws Provider](https://registry.terraform.io/providers/hashicorp/aws/latest) v3.74.3
 - Generated with [CDK for Terraform](https://github.com/hashicorp/terraform-cdk) v0.9.1
 
-## To Add in you project:
+### To Add in you project:
 
     go get github.com/hortau/cdktf-provider-aws-go
 
-## Example:
+### Example:
 ```go
 package main
 
